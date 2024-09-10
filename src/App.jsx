@@ -13,15 +13,14 @@ function App() {
   const [darkMode, setDarkMode] = useState(prefersDarkMode);
   const [detail, setDetail] = useState(null);
   const [data, setData] = useState([]);
+  const render = (i) => setDetail(i);
+  const toggle = () => setDarkMode((prev) => !prev);
+
   const regions = [
     ...new Set(
       data.sort((a, z) => a.region.localeCompare(z.region)).map((i) => i.region)
     ),
   ];
-
-  const render = (i) => setDetail(i);
-
-  const toggle = () => setDarkMode((prev) => !prev);
 
   useEffect(() => {
     if (darkMode) {
