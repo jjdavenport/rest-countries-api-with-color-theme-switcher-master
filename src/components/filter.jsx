@@ -1,15 +1,15 @@
 const Filter = ({ region }) => {
   return (
-    <>
-      <section>
-        <label className="p-4" htmlFor="regions">
-          Filter by region
-        </label>
-        <select name="regions">
-          <option value={region}>{region}</option>
-        </select>
-      </section>
-    </>
+    <section className="p-4">
+      <select className="cursor-pointer">
+        <option>Filter by Region</option>
+        {region.map((i, index) => (
+          <option key={index} value={i}>
+            {i}
+          </option>
+        ))}
+      </select>
+    </section>
   );
 };
 

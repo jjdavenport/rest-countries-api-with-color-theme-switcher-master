@@ -13,7 +13,11 @@ function App() {
   const [darkMode, setDarkMode] = useState(prefersDarkMode);
   const [detail, setDetail] = useState(null);
   const [data, setData] = useState([]);
-  const [backup, setBackup] = useState([]);
+  const regions = [
+    ...new Set(
+      data.sort((a, z) => a.region.localeCompare(z.region)).map((i) => i.region)
+    ),
+  ];
 
   const render = (i) => setDetail(i);
 
@@ -33,7 +37,8 @@ function App() {
       const result = await response.json();
       setData(result);
     } catch (error) {
-      console.log("error");
+      console.log("Error, using backup data", error);
+      setData(backup);
     }
   };
 
@@ -46,7 +51,7 @@ function App() {
       <div className="flex flex-col gap-2">
         <Header onClick={toggle} darkMode={darkMode} />
         <Input />
-        <Filter region={data.region} />
+        <Filter region={regions} />
         <main>
           {detail ? (
             <Detail
@@ -62,9 +67,9 @@ function App() {
               language={Object.values(detail.languages).join(", ")}
               border={detail.borders}
               currency={Object.values(detail.currencies)
-                .map((c) => c.name)
+                .map((i) => i.name)
                 .join(", ")}
-              alt={detail.alt}
+              alt={detail.flags.alt}
             />
           ) : (
             <ul className="flex flex-col gap-4 md:grid md:grid-cols-4 md:grid-rows-2 p-4 items-center">
@@ -73,7 +78,7 @@ function App() {
                 .map((i) => (
                   <li key={i.cca3}>
                     <Summary
-                      alt={i.alt}
+                      alt={i.flags.alt}
                       onClick={() => render(i)}
                       img={i.flags.png}
                       name={i.name.common}
