@@ -1,7 +1,11 @@
 const Input = () => {
   return (
     <>
-      <input type="search" placeholder="Search for a country..." />
+      <input
+        className="p-4"
+        type="search"
+        placeholder="Search for a country..."
+      />
     </>
   );
 };

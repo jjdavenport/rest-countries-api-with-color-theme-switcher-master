@@ -42,31 +42,50 @@ function App() {
 
   return (
     <>
-      <Header onClick={toggle} darkMode={darkMode} />
-      <Input />
-      <Filter region={data.region} />
-      {data.map((country, index) => (
-        <section key={country.cca3 || index}>
-          {!detail ? (
-            <Summary
-              onClick={render}
-              img={country.flags.png}
-              name={country.name.common}
-              population={country.population}
-              region={country.region}
-              capital={country.capital?.[0]}
-            />
-          ) : (
-            <Detail
-              img={country.flags.png}
-              name={country.name.common}
-              population={country.population}
-              region={country.region}
-              capital={country.capital?.[0]}
-            />
-          )}
+      <div className="flex flex-col gap-2">
+        <Header onClick={toggle} darkMode={darkMode} />
+        <Input />
+        <Filter region={data.region} />
+        <section>
+          <ul className="flex flex-col gap-4 md:grid md:grid-cols-4 md:grid-rows-2 p-4 items-center">
+            {data
+              .filter((i) =>
+                [
+                  "Germany",
+                  "United States",
+                  "Brazil",
+                  "Iceland",
+                  "Afghanistan",
+                  "Åland Islands",
+                  "Albania",
+                  "Algeria",
+                ].includes(i.name.common)
+              )
+              .map((i) => (
+                <li key={i.cca3}>
+                  {!detail ? (
+                    <Summary
+                      onClick={render}
+                      img={i.flags.png}
+                      name={i.name.common}
+                      population={i.population}
+                      region={i.region}
+                      capital={i.capital?.[0]}
+                    />
+                  ) : (
+                    <Detail
+                      img={i.flags.png}
+                      name={i.name.common}
+                      population={i.population}
+                      region={i.region}
+                      capital={i.capital?.[0]}
+                    />
+                  )}
+                </li>
+              ))}
+          </ul>
         </section>
-      ))}
+      </div>
     </>
   );
 }

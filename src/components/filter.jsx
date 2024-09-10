@@ -1,10 +1,14 @@
 const Filter = ({ region }) => {
   return (
     <>
-      <label htmlFor="regions">Filter by region</label>
-      <select name="regions">
-        <option value={region}>{region}</option>
-      </select>
+      <section>
+        <label className="p-4" htmlFor="regions">
+          Filter by region
+        </label>
+        <select name="regions">
+          <option value={region}>{region}</option>
+        </select>
+      </section>
     </>
   );
 };
