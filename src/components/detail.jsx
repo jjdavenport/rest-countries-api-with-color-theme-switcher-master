@@ -1,38 +1,52 @@
 import arrow from "./assets/arrow.svg";
 
-const Detail = ({ img }) => {
+const Detail = ({
+  img,
+  name,
+  population,
+  region,
+  capital,
+  subRegion,
+  native,
+  back,
+  domain,
+  language,
+  border,
+  currency,
+  alt,
+}) => {
   return (
     <>
-      <article>
-        <button>
-          <img src={arrow} alt={arrow} /> Back
+      <article className="p-4 flex flex-col gap-2">
+        <button className="flex items-center gap-2" onClick={back}>
+          <img className="w-4" src={arrow} alt={arrow} /> Back
         </button>
-        <img src={img} />
-        <span>{img}</span>
+        <img src={img} alt={alt} />
+        <span>{name}</span>
         <ul>
-          <li>{img}</li>
-          <li>{img}</li>
-          <li>{img}</li>
-          <li>{img}</li>
-          <li>{img}</li>
+          <li>{native}</li>
+          <li>{population}</li>
+          <li>{region}</li>
+          <li>{subRegion}</li>
+          <li>{capital}</li>
         </ul>
         <ul>
-          <li>{img}</li>
-          <li>{img}</li>
-          <li>{img}</li>
+          <li>{domain}</li>
+          <li>{currency}</li>
+          <li>{language}</li>
         </ul>
-        <span>{img}</span>
-        <ul>
-          <li>
-            <button>{img}</button>
-          </li>
-          <li>
-            <button>{img}</button>
-          </li>
-          <li>
-            <button>{img}</button>
-          </li>
-        </ul>
+        {border && border.length > 0 ? (
+          <>
+            <span>Borders</span>
+            <ul className="flex gap-2">
+              {border.map((i, index) => (
+                <li key={index}>
+                  <button>{i}</button>
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : null}
       </article>
     </>
   );

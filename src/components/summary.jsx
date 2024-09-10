@@ -1,8 +1,8 @@
-const Summary = ({ img, name, region, population, capital }) => {
+const Summary = ({ img, name, region, population, capital, onClick, alt }) => {
   return (
     <>
-      <button>
-        <img src={img} />
+      <button onClick={onClick}>
+        <img src={img} alt={alt} />
         <span>{name}</span>
         <ul>
           <li>{population}</li>
