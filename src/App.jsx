@@ -36,15 +36,15 @@ function App() {
     <>
       <Wrapper>
         <Header />
-        <main className=" flex flex-col gap-8 px-10 py-8">
-          <div className="flex justify-between">
+        <main className="flex flex-col gap-10 md:gap-14 px-4 md:px-10 py-6 md:py-14">
+          <div className="flex flex-col md:flex-row gap-8 justify-between">
             <Input />
             <Filter onClick={filter} region={regions} />
           </div>
           {detail ? (
             <Detail onClick={() => setDetail(null)} data={detail} />
           ) : (
-            <ul className="flex flex-col gap-4 md:grid md:grid-cols-4 md:grid-rows-2  items-center">
+            <ul className="flex flex-col gap-16 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:grid-rows-2 items-center">
               {data
                 .sort((a, z) => a.name.common.localeCompare(z.name.common))
                 .map((i) => (

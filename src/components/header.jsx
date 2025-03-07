@@ -4,18 +4,18 @@ const Header = () => {
   const { darkMode, setDarkMode } = useTheme();
 
   return (
-    <header className="flex shadow-md bg-white dark:bg-darkBlue justify-between px-10 py-4">
-      <h1 className="text-2xl dark:text-white font-bold">
+    <header className="flex shadow-md bg-white text-sm dark:bg-darkBlue justify-between px-4 md:px-10 py-6">
+      <h1 className="md:text-2xl  dark:text-white font-black">
         Where in the world?
       </h1>
       <button
-        className="flex gap-3 dark:text-white items-center"
+        className="flex gap-2 md:text-base md:gap-3 dark:text-white items-center"
         onClick={() => setDarkMode(!darkMode)}
       >
         {darkMode ? (
           <>
             <svg
-              className="h-5 w-5 fill-white"
+              className="h-4 w-4 fill-white"
               fill="#000000"
               version="1.1"
               id="Capa_1"
@@ -39,7 +39,7 @@ const Header = () => {
         ) : (
           <>
             <svg
-              className="h-5 w-5"
+              className="h-4 w-4"
               height="800px"
               width="800px"
               version="1.1"

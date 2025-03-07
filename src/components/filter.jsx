@@ -5,14 +5,14 @@ const Filter = ({ region, onClick }) => {
 
   const toggle = () => setMenu(!menu);
   return (
-    <section className="p-4 text-sm shadow-lg rounded-md dark:bg-darkBlue bg-white relative">
+    <section className="text-sm w-fit shadow-md rounded-md dark:bg-darkBlue bg-white relative">
       <button
-        className="flex dark:text-white items-center gap-6"
+        className="flex px-6 py-3 md:px-4 md:py-4 focus:outline-none dark:text-white items-center gap-12"
         onClick={toggle}
       >
         Filter by Region
         <svg
-          className={`w-3 h-3 ${
+          className={`w-2 h-2 ${
             menu ? "rotate-0 " : "rotate-180"
           } dark:fill-white transition-all duration-300 ease-in-out`}
           fill="#000000"
@@ -32,8 +32,8 @@ const Filter = ({ region, onClick }) => {
         </svg>
       </button>
       {menu && (
-        <div className="flex bg-white left-0 top-16 w-full rounded-md absolute dark:bg-darkBlue flex-col  m-0 p-4">
-          <ul className="flex flex-col gap-1">
+        <div className="flex bg-white left-0 top-12 md:top-16 w-full rounded-md absolute dark:bg-darkBlue flex-col  m-0 p-4">
+          <ul className="flex flex-col gap-2">
             {region.map((i, index) => (
               <li key={index}>
                 <button className="dark:text-white" onClick={() => onClick(i)}>
