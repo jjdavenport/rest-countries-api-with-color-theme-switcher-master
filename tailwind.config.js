@@ -1,9 +1,14 @@
+import tailwindScrollbar from "tailwind-scrollbar";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{html,js,jsx}", "./index.html"],
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        custom: ["nunito sans", "sans-serif"],
+      },
       colors: {
         darkBlue: "hsl(209, 23%, 22%)",
         veryDarkBlueDarkMode: "hsl(207, 26%, 17%)",
@@ -14,5 +19,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [tailwindScrollbar],
 };

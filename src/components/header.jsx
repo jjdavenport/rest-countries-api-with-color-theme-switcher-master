@@ -9,13 +9,13 @@ const Header = () => {
         Where in the world?
       </h1>
       <button
-        className="flex gap-3 items-center"
+        className="flex gap-3 dark:text-white items-center"
         onClick={() => setDarkMode(!darkMode)}
       >
         {darkMode ? (
           <>
             <svg
-              className="h-4 w-4"
+              className="h-5 w-5 fill-white"
               fill="#000000"
               version="1.1"
               id="Capa_1"
@@ -39,7 +39,7 @@ const Header = () => {
         ) : (
           <>
             <svg
-              className="h-4 w-4"
+              className="h-5 w-5"
               height="800px"
               width="800px"
               version="1.1"

@@ -4,7 +4,7 @@ const Summary = ({ data, onClick }) => {
       <button onClick={onClick}>
         <img src={data.flags.png} alt={data.name.common} />
         <div className="flex flex-col gap-4 text-left p-4">
-          <span className="text-lg">{data.name.common}</span>
+          <span className="text-lg font-bold">{data.name.common}</span>
           <ul className="flex flex-col gap-1">
             <li>Population: {data.population}</li>
             <li>Region: {data.region}</li>

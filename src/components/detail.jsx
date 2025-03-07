@@ -24,8 +24,6 @@ const Detail = ({ data, onClick }) => {
         </button>
         <img src={data.flags.png} alt={`Flag of ${data.name}`} />
         <span>{data.name.common}</span>
-        <img src={data.flags.png} alt={`Flag of ${data.name}`} />
-        <span>{data.name.common}</span>
         <ul>
           <li>{data.nativeName}</li>
           <li>Population: {data.population}</li>
