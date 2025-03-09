@@ -1,7 +1,13 @@
-const Detail = ({ data, onClick }) => {
+import { useEffect } from "react";
+
+const Detail = ({ data, onClick, onBorder }) => {
+  useEffect(() => {
+    console.log(data);
+  }, []);
+
   return (
     <>
-      <article className="flex flex-col gap-10 p-4 text-base dark:text-white md:p-0 lg:gap-16">
+      <article className="flex flex-col gap-14 p-4 text-base dark:text-white md:p-0 lg:gap-16">
         <button
           className="flex w-fit items-center gap-2 rounded-md bg-white px-8 py-2 shadow-2xl dark:bg-darkBlue"
           onClick={onClick}
@@ -29,7 +35,7 @@ const Detail = ({ data, onClick }) => {
               <span className="text-xl font-extrabold md:text-2xl lg:text-4xl">
                 {data.name.common}
               </span>
-              <div className="flex flex-col gap-4 lg:flex-row xl:gap-20">
+              <div className="flex flex-col gap-4 whitespace-nowrap lg:flex-row lg:justify-between">
                 <div className="flex flex-col gap-4">
                   <ul className="flex flex-col gap-1">
                     <li>
@@ -65,7 +71,10 @@ const Detail = ({ data, onClick }) => {
                     <ul className="flex flex-wrap gap-2">
                       {data.borders.map((border, index) => (
                         <li key={index}>
-                          <button className="rounded-sm px-4 py-1 text-sm shadow-md dark:bg-darkBlue">
+                          <button
+                            onClick={onBorder}
+                            className="rounded-sm px-4 py-1 text-sm shadow-md dark:bg-darkBlue"
+                          >
                             {border}
                           </button>
                         </li>

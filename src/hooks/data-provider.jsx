@@ -21,6 +21,7 @@ const useData = () => {
 
   return {
     data,
+    setData,
   };
 };
 

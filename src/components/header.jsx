@@ -4,7 +4,7 @@ const Header = () => {
   const { darkMode, setDarkMode } = useTheme();
 
   return (
-    <header className="flex justify-between bg-white px-4 py-6 text-sm shadow-md dark:bg-darkBlue md:px-10 lg:px-20">
+    <header className="flex justify-between bg-white px-6 py-7 text-sm shadow-md dark:bg-darkBlue md:px-10 md:py-6 lg:px-20">
       <h1 className="font-black dark:text-white md:text-2xl">
         Where in the world?
       </h1>

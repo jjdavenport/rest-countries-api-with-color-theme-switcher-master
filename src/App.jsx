@@ -8,7 +8,7 @@ import useData from "./hooks/data-provider";
 import Wrapper from "./components/wrapper";
 
 function App() {
-  const { data } = useData();
+  const { data, setData } = useData();
   const [detail, setDetail] = useState(null);
   const [regions, setRegions] = useState([
     "Africa",
