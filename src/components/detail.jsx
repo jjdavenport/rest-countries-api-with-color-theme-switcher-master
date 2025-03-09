@@ -31,28 +31,46 @@ const Detail = ({ data, onClick, onBorder }) => {
         <div className="flex flex-col gap-10 lg:flex-row xl:gap-20">
           <img className="lg:w-1/2" src={data.flags.png} />
           <div className="flex flex-1 flex-col gap-4 lg:justify-center">
-            <div className="flex flex-col gap-4 md:gap-8">
-              <span className="text-xl font-extrabold md:text-2xl lg:text-4xl">
+            <div className="flex flex-col gap-8">
+              <span className="text-2xl font-extrabold lg:text-4xl">
                 {data.name.common}
               </span>
-              <div className="flex flex-col gap-4 whitespace-nowrap lg:flex-row lg:justify-between">
+              <div className="flex flex-col gap-8 whitespace-nowrap lg:flex-row lg:justify-between">
                 <div className="flex flex-col gap-4">
-                  <ul className="flex flex-col gap-1">
+                  <ul className="flex flex-col gap-2 font-light">
                     <li>
-                      Native name:{" "}
+                      <span className="font-semibold">Native name: </span>
                       {Object.values(data.name.nativeName)[0]?.common}
                     </li>
-                    <li>Population: {data.population.toLocaleString(2)}</li>
-                    <li>Region: {data.region}</li>
-                    <li>Sub Region: {data.subregion}</li>
-                    <li>Capital: {data.capital}</li>
+                    <li>
+                      <span className="font-semibold">Population: </span>
+                      {data.population.toLocaleString(2)}
+                    </li>
+                    <li>
+                      <span className="font-semibold">Region:</span>{" "}
+                      {data.region}
+                    </li>
+                    <li>
+                      <span className="font-semibold">Sub Region: </span>
+                      {data.subregion}
+                    </li>
+                    <li>
+                      <span className="font-semibold">Capital: </span>{" "}
+                      {data.capital}
+                    </li>
                   </ul>
                 </div>
-                <ul className="flex flex-col gap-1">
-                  <li>Top Level Domain: {data.tld}</li>
-                  <li>Currencies: {Object.values(data.currencies)[0]?.name}</li>
+                <ul className="flex flex-col gap-2 font-light">
+                  <li>
+                    <span className="font-semibold">Top Level Domain: </span>{" "}
+                    {data.tld}
+                  </li>
+                  <li>
+                    <span className="font-semibold">Currencies: </span>{" "}
+                    {Object.values(data.currencies)[0]?.name}
+                  </li>
                   <li className="flex gap-1">
-                    Languages:
+                    <span className="font-semibold">Languages:</span>
                     {Object.values(data.languages).map((language, index) => (
                       <span key={index}>
                         {language}
@@ -66,8 +84,10 @@ const Detail = ({ data, onClick, onBorder }) => {
               </div>
               {data.borders && data.borders.length > 0 ? (
                 <>
-                  <div className="flex flex-col gap-2 xl:flex-row">
-                    <span>Border Countries:</span>
+                  <div className="flex flex-col gap-4 md:gap-2 xl:flex-row">
+                    <span className="flex items-center text-lg font-semibold md:text-base">
+                      Border Countries:
+                    </span>
                     <ul className="flex flex-wrap gap-2">
                       {data.borders.map((border, index) => (
                         <li key={index}>

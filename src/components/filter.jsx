@@ -7,7 +7,7 @@ const Filter = ({ regions, onClick }) => {
   return (
     <section className="relative w-fit rounded-md bg-white text-sm shadow-md dark:bg-darkBlue">
       <button
-        className="flex items-center gap-12 px-6 py-3 focus:outline-none dark:text-white md:px-4 md:py-4"
+        className="flex items-center gap-12 px-6 py-3 font-medium focus:outline-none dark:text-white md:px-4 md:py-4"
         onClick={toggle}
       >
         Filter by Region
@@ -33,7 +33,7 @@ const Filter = ({ regions, onClick }) => {
       </button>
       {menu && (
         <div className="absolute left-0 top-12 m-0 flex w-full flex-col rounded-md bg-white p-4 dark:bg-darkBlue md:top-14">
-          <ul className="flex flex-col gap-2">
+          <ul className="flex flex-col gap-2 font-medium">
             {regions.map((i, index) => (
               <li key={index}>
                 <button className="dark:text-white" onClick={() => onClick(i)}>

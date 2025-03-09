@@ -8,7 +8,7 @@ const Summary = ({ data, onClick }) => {
           alt={data.name.common}
         />
         <div className="flex flex-col gap-4 px-6 pb-12 pt-8 text-left md:px-4 md:pb-10 md:pt-6">
-          <span className="text-lg font-black">{data.name.common}</span>
+          <span className="text-lg font-extrabold">{data.name.common}</span>
           <ul className="flex flex-col gap-1">
             <li className="font-bold">
               Population:
